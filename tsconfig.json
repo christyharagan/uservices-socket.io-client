@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "emitDecoratorMetadata": true,
+        "declaration": true,
+        "module": "commonjs",
+        "rootDir": ".",
+        "sourceMap": true,
+        "sourceRoot": ".",
+        "target": "es5",
+        "outDir": "./dist"
+    },
+    "filesGlob": [
+        "./lib/**/*.ts",
+        "./node_modules/*/*.d.ts",
+        "./typings/**/*.d.ts",
+        "./node_modules/rx/ts/rx.d.ts",
+        "./uservices-socket.io-client.d.ts"
+    ],
+    "compileOnSave": true,
+    "files": [
+        "./lib/index.ts",
+        "./lib/localProxy.ts",
+        "./lib/remoteProxy.ts",
+        "./node_modules/typescript-schema/typescript-schema.d.ts",
+        "./node_modules/uservices/uservices.d.ts",
+        "./typings/es6/es6.d.ts",
+        "./typings/socket.io-client/socket.io-client.d.ts",
+        "./typings/tsd.d.ts",
+        "./node_modules/rx/ts/rx.d.ts",
+        "./uservices-socket.io-client.d.ts"
+    ]
+}
