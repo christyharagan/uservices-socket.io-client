@@ -1,12 +1,12 @@
-import {visitSpec, Spec} from 'uservices'
+import {visitService, Service} from 'uservices'
 import {Subject} from 'rx'
 import * as s from 'typescript-schema'
 
-export function createRemoteProxy<T>(socket: SocketIOClient.Socket, serviceSchema: Spec) {
+export function createRemoteProxy<T>(socket: SocketIOClient.Socket, serviceSpec: Service<any, any>) {
   let proxy: any = {}
 
-  visitSpec({
-    onPromise: function(memberSchema) {
+  visitService(serviceSpec, {
+    onMethod: function(memberSchema) {
       let name = memberSchema.name
       proxy[name] = function(...args: any[]) {
         return new Promise(function(resolve, reject) {
@@ -20,7 +20,7 @@ export function createRemoteProxy<T>(socket: SocketIOClient.Socket, serviceSchem
         })
       }
     },
-    onObservable: function(memberSchema) {
+    onEvent: function(memberSchema) {
       let name = memberSchema.name
       proxy[name] = function(...args: any[]) {
         let observer = new Subject()
@@ -40,7 +40,7 @@ export function createRemoteProxy<T>(socket: SocketIOClient.Socket, serviceSchem
         return observer
       }
     }
-  },  /*Type Hack*/ <s.Class> serviceSchema)
+  })
 
   return proxy
 }
