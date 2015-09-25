@@ -1,6 +1,5 @@
 import {visitService, Service} from 'uservices'
 import {Observer, Observable} from 'rx'
-import * as s from 'typescript-schema'
 
 export function createLocalProxy<T>(socket: SocketIOClient.Socket, serviceSpec: Service<any, any>, service: T) {
   visitService(serviceSpec, {

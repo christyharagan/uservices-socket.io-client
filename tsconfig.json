@@ -3,36 +3,30 @@
         "emitDecoratorMetadata": true,
         "declaration": true,
         "module": "commonjs",
-        "rootDir": ".",
+        "rootDir": "./src",
         "sourceMap": true,
         "sourceRoot": ".",
         "target": "es5",
-        "outDir": "./dist"
+        "outDir": ".",
+        "moduleResolution": "node"
     },
     "formatCodeOptions": {
         "indentSize": 2,
         "tabSize": 2
     },
     "filesGlob": [
-        "./lib/**/*.ts",
-        "./node_modules/*/*.d.ts",
+        "./src/**/*.ts",
         "./typings/**/*.d.ts",
-        "./node_modules/rx/ts/rx.d.ts",
-        "./node_modules/typescript/bin/typescript.d.ts",
-        "./uservices-socket.io-client.d.ts"
+        "./node_modules/rx/ts/rx.d.ts"
     ],
     "compileOnSave": true,
     "files": [
-        "./lib/index.ts",
-        "./lib/localProxy.ts",
-        "./lib/remoteProxy.ts",
-        "./node_modules/typescript-schema/typescript-schema.d.ts",
-        "./node_modules/uservices/uservices.d.ts",
+        "./src/lib/index.ts",
+        "./src/lib/localProxy.ts",
+        "./src/lib/remoteProxy.ts",
         "./typings/es6/es6.d.ts",
         "./typings/socket.io-client/socket.io-client.d.ts",
         "./typings/tsd.d.ts",
-        "./node_modules/rx/ts/rx.d.ts",
-        "./node_modules/typescript/bin/typescript.d.ts",
-        "./uservices-socket.io-client.d.ts"
+        "./node_modules/rx/ts/rx.d.ts"
     ]
 }

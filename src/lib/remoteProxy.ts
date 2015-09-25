@@ -1,6 +1,5 @@
 import {visitService, Service} from 'uservices'
 import {Subject} from 'rx'
-import * as s from 'typescript-schema'
 
 export function createRemoteProxy<T>(socket: SocketIOClient.Socket, serviceSpec: Service<any, any>) {
   let proxy: any = {}
