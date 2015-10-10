@@ -1,6 +1,5 @@
 {
     "compilerOptions": {
-        "emitDecoratorMetadata": true,
         "declaration": true,
         "module": "commonjs",
         "rootDir": "./src",
@@ -14,19 +13,8 @@
         "indentSize": 2,
         "tabSize": 2
     },
-    "filesGlob": [
-        "./src/**/*.ts",
-        "./typings/**/*.d.ts",
-        "./node_modules/rx/ts/rx.d.ts"
-    ],
     "compileOnSave": true,
-    "files": [
-        "./src/lib/index.ts",
-        "./src/lib/localProxy.ts",
-        "./src/lib/remoteProxy.ts",
-        "./typings/es6/es6.d.ts",
-        "./typings/socket.io-client/socket.io-client.d.ts",
-        "./typings/tsd.d.ts",
-        "./node_modules/rx/ts/rx.d.ts"
+    "exclude": [
+        "node_modules"
     ]
 }
